@@ -19,11 +19,15 @@ const { render } = require("renderly");
 
 const tplData = {
   name: "John",
+  // This is a computed property
   get lang() {
     return `${this.name} speaks French!`;
   }
+  // You can pass functions. Basically whatever you want
+  currencyFormatter: function() { .... }
 };
 
+// A `render` function is automatically added to the template data
 console.log(render("./templates/test.tpl", tplData));
 ```
 
@@ -59,3 +63,7 @@ In file `meta.tsg`:
 ```html
 <meta name="content" value="${name}" />
 ```
+
+**Every** template has access to a `render` function that it can use to pull in additional templates.
+
+Inside the templates you can use standard ES6 template string interpolations to display variables and basically use just about any javascript function.
