@@ -15,7 +15,7 @@ First install:
 #### Programatic usage
 
 ```javascript
-const { render } = require("../index");
+const { render } = require("renderly");
 
 const tplData = {
   name: "John",
