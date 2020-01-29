@@ -1,4 +1,12 @@
-const { render } = require("../index");
+const { createRenderer } = require("../index");
+const render = createRenderer({
+  globals: {
+    link: function(post) {
+      return `posts/${post.id}`;
+    },
+    siteTitle: "Test"
+  }
+});
 
 const tplData = {
   name: "John",

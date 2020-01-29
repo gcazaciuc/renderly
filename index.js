@@ -1,4 +1,4 @@
-const { render } = require("./TemplateEngine");
+const { createRenderer } = require("./TemplateEngine");
 module.exports = {
-  render
+  createRenderer
 };
